@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Layout</title>
+
+    <style>
+        body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     }
+
+     .Img1{
+      width: 100%;
+      height: 20.5vh;
+      border-radius: 0px;
+      object-fit: cover;
+      padding-bottom: 20px;
+      opacity: 100%;
+      
+     }
+
+     .text-overlay {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  
+  display: flex;          /* Turn into a flex container */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center;    /* Center items horizontally */
+  gap: 3px;              /* Add vertical spacing between items */
+}
+
+
+
+      ul{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+      }
+
+      li{
+        flex-grow: 1;
+        height: 60vh;
+      }
+
+      li:last-child {
+  flex-grow: 10;
+   }
+
+      img{
+        max-height: 100%;
+        min-width: 100%;
+        object-fit: cover;
+        vertical-align: bottom;
+        border-radius: 40px;
+      }
+
+      @media (max-aspect-ratio: 1/1) {
+  li {
+    height: 30vh;
+  }
+}
+
+@media (max-height: 480px) {
+  li {
+    height: 80vh;
+  }
+}
+
+@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+  ul {
+    flex-direction: row;
+  }
+
+  li {
+    height: auto;
+    width: 100%;
+  }
+  img {
+    width: 100%;
+    max-height: 75vh;
+    min-width: 0;
+  }
+}
+
+     
+  .topbar{
+    display: flex;
+    gap: 1rem;
+    background-color: #303535;
+    height: 6.5vh;
+    
+  }
+
+
+
+
+  .kids1{
+    flex: auto;
+    position: relative;
+    padding: 10px 15px;
+    color: #dfdcdc;
+    cursor: pointer;
+  }
+
+  .kids1:hover {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    
+    }
+
+    /* Dropdown Styling */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%; /* Places dropdown below the parent item */
+      left: 0;
+      background-color: white;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content div {
+      padding: 10px;
+      text-align: left;
+      color: black;
+      background-color: white;
+      cursor: pointer;
+    }
+    .dropdown-content div:hover {
+      background-color: #f7b6af;
+    }
+
+    /* Show Dropdown on Hover */
+    .kids1:hover .dropdown-content {
+      display: block;
+    }
+
+  form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+      
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: 100%;
+      font-size: 12px;
+      border-radius: 50px;
+      border: solid rgb(212, 212, 219) 1px;
+    }
+    button {
+      padding: 10px 15px;
+      font-size: 16px;
+      color: white;
+      background-color: #DA3928;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      border-radius: 50px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 1300px) {
+
+      .topbar{
+    display: flex;
+    flex-wrap: wrap;
+   
+    gap: 1rem;
+    background-color: #303535;
+    height: auto;
+  }
+
+  .kids1{
+    padding: 10px 15px;
+    color: #dfdcdc;
+    cursor: pointer;
+  }
+    }
+
+    /* Medium screens (tablets and small laptops) */
+@media (max-width: 1028px) {
+  .text-overlay {
+    top: 27%; /* Adjust position for medium screens */
+  }
+
+  .text-overlay h1 {
+    font-size: 1.5rem; /* Slightly smaller text */
+  }
+
+  .text-overlay p {
+    font-size: 1rem;
+  }
+}
+
+/* Small screens (mobile phones) */
+@media (max-width: 810px) {
+  .text-overlay {
+    top: 35%; /* Adjust position for small screens */
+  }
+
+  .text-overlay h1 {
+    font-size: 1.5rem; /* Further reduced text size */
+  }
+
+  .text-overlay p {
+    font-size: 1rem;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 492px) {
+  .text-overlay {
+    top: 36%; /* Positioning adjustment for tiny screens */
+  }
+
+  .text-overlay h1 {
+    font-size: 1.5rem; /* Compact heading */
+  }
+
+  .text-overlay p {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+@media (max-width:437px) {
+
+  .text-overlay {
+    top: 45%; /* Positioning adjustment for tiny screens */
+  }
+
+  .text-overlay h1 {
+    font-size: 1.5rem; /* Compact heading */
+  }
+
+  .text-overlay p {
+    font-size: 0.9rem;
+  }
+
+
+}
+
+@media (max-width: 414px)  {
+  .text-overlay {
+    top: 37%; /* Positioning adjustment for tiny screens */
+  }
+
+  .text-overlay h1 {
+    font-size: 1.5rem; /* Compact heading */
+  }
+
+  .text-overlay p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width:370px) {
+
+.text-overlay {
+  top: 45%; /* Positioning adjustment for tiny screens */
+}
+
+.text-overlay h1 {
+  font-size: 1rem; /* Compact heading */
+}
+
+.text-overlay p {
+  font-size: 0.7rem;
+}
+
+
+}
+
+@media (max-width:327px) {
+
+.text-overlay {
+  top: 55%; /* Positioning adjustment for tiny screens */
+}
+
+.text-overlay h1 {
+  font-size: 1rem; /* Compact heading */
+}
+
+.text-overlay p {
+  font-size: 0.7rem;
+}
+
+
+}
+
+@media (max-width:266px) {
+
+.text-overlay {
+  top: 60%; /* Positioning adjustment for tiny screens */
+}
+
+.text-overlay h1 {
+  font-size: 1rem; /* Compact heading */
+}
+
+.text-overlay p {
+  font-size: 0.7rem;
+}
+
+
+}
+
+@media (max-width:204px) {
+
+.text-overlay {
+  top: 70%; /* Positioning adjustment for tiny screens */
+}
+
+.text-overlay h1 {
+  font-size: 1rem; /* Compact heading */
+}
+
+.text-overlay p {
+  font-size: 0.7rem;
+}
+
+
+}
+
+@media (max-width:170px) {
+
+.text-overlay {
+  top: 80%; /* Positioning adjustment for tiny screens */
+}
+
+.text-overlay h1 {
+  font-size: 0.5rem; /* Compact heading */
+}
+
+.text-overlay p {
+  font-size: 0.5rem;
+}
+
+
+}
+
+     
+
+    
+
+
+
+  
+    </style>
+    
+</head>
+
+
+
+<body>
+
+ 
+
+  <div class="topbar">
+    <div class="kids1">
+      Images
+      <div class="dropdown-content">
+        <div>Image 1</div>
+        <div>Image 2</div>
+        <div>Image 3</div>
+      </div>
+    </div>
+    <div class="kids1">
+      Video
+      <div class="dropdown-content">
+        <div>video 1</div>
+        <div>video 2</div>
+        <div>video 3</div>
+      </div>
+    </div>
+    <div class="kids1">
+      Browse Content
+      <div class="dropdown-content">
+        <div>Browse Content 1</div>
+        <div>Browse Content 2</div>
+        <div>Browse Content 3</div>
+        <div>Browse Content 4</div>
+        <div>Browse Content 5</div>
+        <div>Browse Content 6</div>
+      </div>
+    </div>
+    <div class="kids1">AI Images</div>
+    <div class="kids1">Enterprise</div>
+   
+
+
+    <div class="kids1 ">Pricing</div>
+    <div class="kids1 side1">Login</div>
+    <div class="kids1 side2">Sign up</div>
+  </div>
+
+  <form action="search_results.html" method="get">
+    <input type="text" name="query" placeholder="Search..." required>
+    <button type="submit">Search</button>
+  </form>
+
+  <cover>
+
+    <div class="text-overlay">
+      <h1>Welcome to My Test Website</h1>
+      <p>gallery website by Michael Blanton </p>
+    </div>
+
+
+    <img src="https://images.pexels.com/photos/1718345/pexels-photo-1718345.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="cover image" loading="lazy" class="Img1">
+
+  
+  </cover>
+
+
+
+  <ul>
+    <li><img src="https://images.pexels.com/photos/28056127/pexels-photo-28056127/free-photo-of-a-book-and-an-orange-on-a-blanket-on-the-beach.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="beach" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/29345981/pexels-photo-29345981/free-photo-of-charming-church-in-autumn-landscape-of-sicily.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="dusk" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/7976953/pexels-photo-7976953.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="beach" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/28374835/pexels-photo-28374835/free-photo-of-scenic-pathway-through-italian-countryside-landscape.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="road" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/19151997/pexels-photo-19151997/free-photo-of-rural-landscape-with-cypress-trees-growing-along-a-road-tuscany-italy.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="grass" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/6235511/pexels-photo-6235511.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="church" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/28783476/pexels-photo-28783476/free-photo-of-black-and-white-portrait-of-woman-with-tattoos.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="woman" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/11625936/pexels-photo-11625936.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="woman" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/9882445/pexels-photo-9882445.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="dude" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/29408341/pexels-photo-29408341/free-photo-of-tranquil-autumn-sunrise-in-latvian-countryside.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="barn" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/29477084/pexels-photo-29477084/free-photo-of-two-cups-of-turkish-tea-by-a-window.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="coffee" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/3960400/pexels-photo-3960400.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="tea" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/13927340/pexels-photo-13927340.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="coffee" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/28957747/pexels-photo-28957747/free-photo-of-young-woman-sunbathing-with-orange-on-balcony.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="wokman" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/14565103/pexels-photo-14565103.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="woman" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/29137181/pexels-photo-29137181/free-photo-of-big-ben-in-autumn-london-scenery.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="london" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/14872685/pexels-photo-14872685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="london" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/16055446/pexels-photo-16055446/free-photo-of-london-drone-landscape.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="london" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/29405941/pexels-photo-29405941/free-photo-of-woman-walking-on-wooden-suspension-bridge-in-autumn.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="walkway" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/13303522/pexels-photo-13303522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/15202881/pexels-photo-15202881/free-photo-of-woman-on-stones-on-stream-in-yosemite-national-park.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/14028294/pexels-photo-14028294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/25682795/pexels-photo-25682795/free-photo-of-back-view-of-a-woman-standing-in-a-foggy-forest-in-autumn.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/4496004/pexels-photo-4496004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/19939289/pexels-photo-19939289/free-photo-of-vintage-train-in-forest-in-taipei.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="train" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/27646893/pexels-photo-27646893/free-photo-of-a-man-in-a-suit-and-tie-holding-an-umbrella.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="man in black" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/29422594/pexels-photo-29422594/free-photo-of-woman-with-umbrella-in-rainy-autumn-scene.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/20061413/pexels-photo-20061413/free-photo-of-young-woman-in-a-snowy-forest-with-smartphone-shooting-video-blog.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/20307050/pexels-photo-20307050/free-photo-of-woman-in-red-coat-in-front-of-snow-covered-trees.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/28759484/pexels-photo-28759484/free-photo-of-young-woman-holding-vintage-camera-outdoors.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="video" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/13332167/pexels-photo-13332167.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="girl" loading=""></li>
+    <li><img src="https://images.pexels.com/photos/28828007/pexels-photo-28828007/free-photo-of-dramatic-black-and-white-portrait-of-woman.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="portraiat" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/15131574/pexels-photo-15131574/free-photo-of-hot-air-balloons-floating-over-rural-scenery.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="fly" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/29087241/pexels-photo-29087241/free-photo-of-silhouette-of-man-and-dog-by-berlin-river-at-sunset.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/17860174/pexels-photo-17860174/free-photo-of-view-of-a-silhouetted-berlin-skyline-with-the-berliner-fernsehturm-in-the-center.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="china" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/29113028/pexels-photo-29113028/free-photo-of-elegant-portrait-of-nigerian-woman-in-traditional-attire.jpeg" alt="African woman" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/19358148/pexels-photo-19358148/free-photo-of-river-and-forest-on-hill-behind.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="bridge" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/24827280/pexels-photo-24827280/free-photo-of-cape-reinga-lighthouse-on-sea-coast-in-new-zealand.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/28999320/pexels-photo-28999320/free-photo-of-vintage-red-tram-on-streets-of-prague.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" loading="lazy"></li>
+    <li><img src="https://images.pexels.com/photos/19699384/pexels-photo-19699384/free-photo-of-young-woman-in-a-white-shirt-posing-against-the-desert.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" loading="lazy"></li>
+
+  </ul>
+  
+
+
+</body>
